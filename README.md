@@ -4,7 +4,7 @@
 This is Dockerfile to use [NVIDIA Isaac SDK](https://developer.nvidia.com/isaac-sdk) on Docker container.
 
 ## Requirements
-* NVIDA graphics driver >= 418.0
+* NVIDIA graphics driver >= 418.0
 * Docker
 * nvidia-docker2
 
