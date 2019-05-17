@@ -12,5 +12,5 @@ docker run --runtime=nvidia --rm -it \
            --env="DISPLAY" \
            --net=host \
            -u "isaac"  \
-           isaac:latest \
+           isaac_sdk:latest \
            bash

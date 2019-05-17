@@ -16,7 +16,7 @@ This time, I used `isaac_sdk-2019.1-17919.tar.xz`.
 
 ### Build Docker image
 ```
-$ docker build -t isaac .
+$ docker build -t isaac_sdk .
 ```
 
 ### Create Docker container
