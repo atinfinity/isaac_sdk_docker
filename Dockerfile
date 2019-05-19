@@ -23,6 +23,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         apt-utils \
         tzdata \
         git \
+        bash-completion \
+        command-not-found \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -37,6 +39,9 @@ RUN mkdir isaac_sdk && \
     tar Jxfv isaac_sdk-2019.1-17919.tar.xz -C isaac_sdk && \
     cd isaac_sdk && \
     bash engine/build/scripts/install_dependencies.sh
+
+ENV NVIDIA_VISIBLE_DEVICES ${NVIDIA_VISIBLE_DEVICES:-all}
+ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
 
 USER root
 RUN rm /home/$USERNAME/isaac_sdk-2019.1-17919.tar.xz
