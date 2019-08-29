@@ -11,6 +11,7 @@ docker run --runtime=nvidia --privileged --rm -it \
            --volume=/dev:/dev:rw \
            --device=/dev/video0:/dev/video0:mwr \
            --device=/dev/video1:/dev/video1:mwr \
+           --shm-size=1gb \
            --env="XAUTHORITY=${XAUTH}" \
            --env="DISPLAY=${DISPLAY}" \
            --env=TERM=xterm-256color \

@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         git \
         bash-completion \
         command-not-found \
+        libgtk2.0-0 \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -33,15 +34,19 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 
 # install Isaac SDK
 USER isaac
-COPY isaac_sdk-2019.1-17919.tar.xz /home/$USERNAME/
+COPY isaac-sdk-2019.2-30e21124.tar.xz /home/$USERNAME/
+COPY isaac_navsim-2019-07-23.tar.xz /home/$USERNAME/
 WORKDIR /home/$USERNAME
 RUN mkdir isaac_sdk && \
-    tar Jxfv isaac_sdk-2019.1-17919.tar.xz -C isaac_sdk && \
+    tar -xf isaac-sdk-2019.2-30e21124.tar.xz -C isaac_sdk && \
     cd isaac_sdk && \
-    bash engine/build/scripts/install_dependencies.sh
+    bash engine/build/scripts/install_dependencies.sh && \
+    mkdir -p isaac_sdk/packages/navsim/unity && \
+    tar -xf isaac_navsim-2019-07-23.tar.xz -C isaac_sdk/packages/navsim/unity
 
 ENV NVIDIA_VISIBLE_DEVICES ${NVIDIA_VISIBLE_DEVICES:-all}
 ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
 
 USER root
-RUN rm /home/$USERNAME/isaac_sdk-2019.1-17919.tar.xz
+RUN rm /home/$USERNAME/isaac-sdk-2019.2-30e21124.tar.xz && \
+    rm /home/$USERNAME/isaac_navsim-2019-07-23.tar.xz

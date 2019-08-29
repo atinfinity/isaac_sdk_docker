@@ -12,7 +12,10 @@ This is Dockerfile to use [NVIDIA Isaac SDK](https://developer.nvidia.com/isaac-
 ### Download NVIDIA Isaac SDK
 Please download NVIDIA Isaac SDK from <https://developer.nvidia.com/isaac-sdk>.  
 And, please put NVIDIA Isaac SDK in the same directory as the Dockerfile.  
-This time, I used `isaac_sdk-2019.1-17919.tar.xz`.
+This time, I used the following package.
+
+- `isaac-sdk-2019.2-30e21124.tar.xz`
+- `isaac_navsim-2019-07-23.tar.xz`
 
 ### Build Docker image
 ```
