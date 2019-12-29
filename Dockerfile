@@ -23,6 +23,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         curl \
         sudo \
+        less \
+        emacs \
         apt-utils \
         tzdata \
         git \
