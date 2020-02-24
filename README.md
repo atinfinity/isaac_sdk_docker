@@ -40,7 +40,7 @@ $ bazel run //apps/samples/stereo_dummy
 ```
 
 ### Open the visualization
-Please open the visualization frontend by opening <http://localhost:3000. in a browser.
+Please open the visualization frontend by opening <http://localhost:3000>. in a browser.
 
 ## Running IsaacSim and Carter navigation stack
 ### Running IsaacSim
