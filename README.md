@@ -4,7 +4,7 @@
 This is Dockerfile to use [NVIDIA Isaac SDK](https://developer.nvidia.com/isaac-sdk) on Docker container.
 
 ## Requirements
-- NVIDIA graphics driver >= 418.0
+- NVIDIA graphics driver >= 440.0
 - Docker
 - nvidia-docker2
 
@@ -14,8 +14,8 @@ Please download NVIDIA Isaac SDK from <https://developer.nvidia.com/isaac-sdk>.
 And, please put NVIDIA Isaac SDK in the same directory as the Dockerfile.  
 This time, I used the following package.
 
-- `isaac-sdk-20191213-65ec14db.tar.xz`
-- `isaac_sim_unity3d-20191213-a61b74b7.tar.gz`
+- `isaac-sdk-20200527-0159e2bab.tar.xz`
+- `isaac_sim_unity3d-20200527-a8205d23.tar.xz`
 
 ### Build Docker image
 ```
@@ -46,7 +46,7 @@ Please open the visualization frontend by opening <http://localhost:3000>. in a 
 ### Running IsaacSim
 ```
 $ cd ~/isaac_sim_unity3d/builds
-$ ./isaac_sim_unity3d.x86_64 --scene small_warehouse
+$ ./sample.x86_64 --scene small_warehouse -logFile -
 ```
 
 ### Running Carter navigation stack
@@ -61,3 +61,5 @@ Please open the visualization frontend by opening <http://localhost:3000> in a b
 ## Reference
 - https://developer.nvidia.com/isaac-sdk
 - https://docs.nvidia.com/isaac/isaac/doc/index.html
+- https://docs.nvidia.com/isaac/isaac/doc/getting_started.html#tutorials-and-sample-applications
+- https://docs.nvidia.com/isaac/isaac/doc/simulation/unity3d.html#warehouse-navigation
