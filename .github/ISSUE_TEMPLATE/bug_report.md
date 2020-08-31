@@ -12,7 +12,7 @@ assignees: ''
 ### Required information:
 - Operating system of host machine => :grey_question:
 - Docker version => :grey_question:
-- NVIDIA Isaac SDK => :grey_question:
+- NVIDIA Isaac SDK version => :grey_question:
 
 
 ### Description of the bug
